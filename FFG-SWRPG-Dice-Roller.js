@@ -62,6 +62,9 @@ if (!Date.now) {
       Debugger: Arron
       Initiative Roller: Andrew H.
       Opposed Roller: Tom F.
+      Group Tab: GM Knowledge Rhino
+      Companion Tab: GM Knowledge Rhino
+      GM Command Center: GM Knowledge Rhino
       Skill Description by: Gribble - https://dl.dropboxusercontent.com/u/9077657/SW-EotE-Reference-Sheets.pdf
       Critical Descriptions by: Gribble - https://dl.dropboxusercontent.com/u/9077657/SW-EotE-Reference-Sheets.pdf
   
