@@ -1,12 +1,5 @@
 ﻿/* Begin Sheet Character Sheet Auto Creator */
 
-/**
- * Generates a blank character sheet.
- * The default is to make it viewable to all but editable by the person calling the script.
- *
- * Syntax: !charsheet
- */
-
 var Charsheet = Charsheet || {};
 
 on('chat:message', function (msg) {
@@ -54,11 +47,11 @@ if (!Date.now) {
 /* End Sheet Character Sheet Auto Creator */
 
 /*
-    Current Version: 3.0
-    Last updated: 04.15.2015
-    Character Sheet and Script Maintained by: Steve Day & Andrew Holder
-    Current Verion: https://github.com/Roll20/roll20-api-scripts/tree/master/EotE%20Dice%20Roller
-    Development and Older Verions: https://github.com/dayst/StarWarsEdgeOfTheEmpire_Dice
+    Current Version: 4.0
+    Last updated: 10.19.2015
+    Character Sheet and Script Maintained by: GM Knowledge Rhino
+    Current and Developement Verions: https://github.com/KnowledgeRhino/FFG-SWRPG-CharacterSheet-For-Roll20.git
+    Older Verions: https://github.com/dayst/StarWarsEdgeOfTheEmpire_Dice
     
     Credits:
         Original creator: Konrad J.
@@ -137,6 +130,27 @@ if (!Date.now) {
           * Description: Rolls 1w die and adds the result to the destiny pool
           * Command: !eed #w destiny doRoll
 
+   Other:
+      charsheet
+          * default:
+          * Description: Generates a blank character sheet and automatically makes it viewable and editable by the person calling the script.
+          * Command: !charsheet
+   
+   Mechanic Rollers:
+   For the following commands, you must first highlight tokens in the play area assigned to characters.
+
+      obligation-check
+          * default:
+          * Description: This allows for an roll for the Obligation against the targets selected.
+          * Command: !obligation-check
+      duty-check
+          * default:
+          * Description: This allows for an roll for the Duty against the targets selected.
+          * Command: !duty-check
+      morality-check
+          * default:
+          * Description: This allows for an roll for the Morality against the targets selected.
+          * Command: !morality-check
   
 */
 
@@ -3520,20 +3534,6 @@ eote.events = function () {
 }
 
 /* Begin Mechanic Roller */
-
-/* --------------------------------------------------------------------------------------------------- */
-//                                          Obligation, Duty, Morality Check Script                                          
-//                                                                                                     
-// This script will Roll a die to check for obligation, Duty or Morality within the Star Wars EOTE RPG system.
-//        !obligation-check
-//        !duty-check
-//        !morality-check
-//        will check all the selected tokens for character sheets then pull the 
-//        required information to check for the required check (even if the character has multiple types).    
-//        it will then roll a die and sort the characters check by value, assign the characters     
-//        a bracket and then compare the die roll result to determine if type is triggered.    
-//        Finally output the results on the chat window.                                                                                    
-/* --------------------------------------------------------------------------------------------------- */
 
 on('chat:message', function (msg) {
     var command = msg.content.toLowerCase();
