@@ -23,6 +23,8 @@ With this I have contributed the following:
       * The Base of Operations section is broken up into the 3 kinds of Bases; Rebel, Business, and Homestead
       * The Shared Resources is for anything that affects the group as a whole and not just the individual character.
   * I added a Companion Tab
+    * NOTE: This has been removed while more testing is ongoing
+      * When making the Companion Sheet I borrowed code from the regular Character Sheet tab, upon testing it was determined       some changes made to the main Character Sheet tab propogated to the Companion Sheet tab. When this is fixed I will           re-add the tab.
     * This is a slightly scaled down version of the main Character tab, but designed to be for a companion type character.
   * The GM sheet (-DicePool) now has a tab!
     * It has a method to roll the Game Mechanics, as well as a way to track the Mechanics of all the Players.
