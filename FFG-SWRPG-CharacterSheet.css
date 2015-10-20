@@ -184,11 +184,11 @@ input.sheet-opt-ship:checked ~ table tr.sheet-opt-ship,
 /* input.sheet-opt-mount:checked ~ table tr.sheet-opt-mount, */
 input.sheet-opt-rebel:checked ~ table tr td.sheet-opt-rebel,
 input.sheet-opt-business:checked ~ table tr td.sheet-opt-business,
-input.sheet-opt-homestead:checked ~ table tr td.sheet-opt-homestead,
-input.sheet-tab-companion-info:checked ~ table tr td.sheet-tab-companion-info,
+input.sheet-opt-homestead:checked ~ table tr td.sheet-opt-homestead
+/* input.sheet-tab-companion-info:checked ~ table tr td.sheet-tab-companion-info,
 input.sheet-tab-companion-skills:checked ~ table tr td.sheet-tab-companion-skills,
 input.sheet-tab-companion-talents:checked ~ table tr td.sheet-tab-companion-talents,
-input.sheet-tab-companion-inventory:checked ~ table tr td.sheet-tab-companion-inventory
+input.sheet-tab-companion-inventory:checked ~ table tr td.sheet-tab-companion-inventory */
 
 {
     display: table-row;
@@ -199,11 +199,11 @@ input.sheet-opt-ship:checked ~ table tr td.sheet-opt-ship,
 /* input.sheet-opt-mount:checked ~ table tr.sheet-opt-mount, */
 input.sheet-opt-rebel:checked ~ table tr td.sheet-opt-rebel,
 input.sheet-opt-business:checked ~ table tr td.sheet-opt-business,
-input.sheet-opt-homestead:checked ~ table tr td.sheet-opt-homestead,
-input.sheet-tab-companion-info:checked ~ table tr td.sheet-tab-companion-info,
+input.sheet-opt-homestead:checked ~ table tr td.sheet-opt-homestead
+/* input.sheet-tab-companion-info:checked ~ table tr td.sheet-tab-companion-info,
 input.sheet-tab-companion-skills:checked ~ table tr td.sheet-tab-companion-skills,
 input.sheet-tab-companion-talents:checked ~ table tr td.sheet-tab-companion-talents,
-input.sheet-tab-companion-inventory:checked ~ table tr td.sheet-tab-companion-inventory
+input.sheet-tab-companion-inventory:checked ~ table tr td.sheet-tab-companion-inventory */
 {
     display: table-cell;
 }
@@ -277,11 +277,12 @@ input.sheet-opt-rebel:checked ~ div.sheet-opt-rebel,
 input.sheet-opt-business:checked ~ div.sheet-opt-business,
 input.sheet-opt-homestead:checked ~ div.sheet-opt-homestead,
 
-/* Companion Sheet Tab Sub Tabs*/
+/* Companion Sheet Tab Sub Tabs
 input.sheet-tab-companion-info:checked ~ div.sheet-tab-companion-info,
 input.sheet-tab-companion-skills:checked ~ div.sheet-tab-companion-skills,
 input.sheet-tab-companion-talents:checked ~ div.sheet-tab-companion-talents,
 input.sheet-tab-companion-inventory:checked ~ div.sheet-tab-companion-inventory,
+*/
 
 /* gmdice Sheet Tab SubTabs */
 input.sheet-tab-gm-weapons:checked ~ div.sheet-tab-gm-weapons, /* Currently used for GM Mechanics Rollers */
@@ -293,7 +294,7 @@ input.sheet-tab {
     width: 162px;
     height: 30px;
     -webkit-appearance:none;
-    -moz-appearance:none;
+    /* -moz-appearance:none; */
     border:none;
     outline:none;
     position: relative;
@@ -999,7 +1000,7 @@ th .sheet-icon-question {
     -webkit-border-radius: 0px 3px 3px 3px;
     border-radius: 0px 3px 3px 3px;
     -webkit-box-shadow: 2px 2px 3px 0px rgba(50, 50, 50, 0.75);
-    -moz-box-shadow:    2px 2px 3px 0px rgba(50, 50, 50, 0.75);
+    /* -moz-box-shadow:    2px 2px 3px 0px rgba(50, 50, 50, 0.75); */
     box-shadow:         2px 2px 3px 0px rgba(50, 50, 50, 0.75);
 }
 
