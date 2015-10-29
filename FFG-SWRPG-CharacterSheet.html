@@ -5,11 +5,11 @@
 <!--Player Sheets-->
 <input type="radio" name="attr_pcgm" class="sheet-tab sheet-tab-character-sheet sheet-player-sheet" value="1" title="Character Sheet" checked="checked" />
 <input type="radio" name="attr_pcgm" class="sheet-tab sheet-tab-ship-sheet sheet-player-sheet" value="2" title="Vehicle Sheet" />
-<input type="radio" name="attr_pcgm" class="sheet-tab sheet-tab-base-sheet sheet-player-sheet" value="4" title="Group Sheet" />
-<!-- <input type="radio" name="attr_pcgm" class="sheet-tab sheet-tab-companion-sheet sheet-player-sheet" value="5" title="Companion Sheet" /> -->
+<input type="radio" name="attr_pcgm" class="sheet-tab sheet-tab-base-sheet sheet-player-sheet" value="3" title="Group Sheet" />
+<!-- <input type="radio" name="attr_pcgm" class="sheet-tab sheet-tab-companion-sheet sheet-player-sheet" value="4" title="Companion Sheet" /> -->
 
 <!--GM Sheets-->
-<input type="radio" name="attr_pcgm" class="sheet-tab sheet-tab-gm-dice sheet-gm-sheet" value="3" title="GM Command Center" />
+<input type="radio" name="attr_pcgm" class="sheet-tab sheet-tab-gm-dice sheet-gm-sheet" value="5" title="GM Command Center" />
 
 <!-- Begin Player Character Sheet -->
 <div class="sheet-tab-content sheet-tab-character-sheet">
@@ -63,7 +63,7 @@
                     </tr>
                 </tbody>
             </table>
-        </div><!-- end sheet-column -->
+        </div><!-- Top Stats -->
         <div class="sheet-small-6 sheet-column">
             <br />
             <h3 class="sheet-section-header">Destiny Pool</h3>
@@ -136,7 +136,8 @@
             </table>
         </div><!-- Dice Pool -->
         <div class="sheet-clear"></div>
-    </div><!-- end sheet-row -->
+    </div>
+
     <input type="radio" name="attr_sheet" class="sheet-tab sheet-tab-character" value="1" title="Character Info" checked="checked" />
     <input type="radio" name="attr_sheet" class="sheet-tab sheet-tab-skills" value="2" title="Skills" />
     <input type="radio" name="attr_sheet" class="sheet-tab sheet-tab-talents" value="3" title="Talents & Powers" />
@@ -3929,6 +3930,7 @@
                                         <option value="skill(@{rankLight}|@{agility})">Ranged - Light</option>
                                         <option value="skill(@{rankHeavy}|@{agility})">Ranged - Heavy</option>
                                         <option value="skill(@{rankLightsaber}|@{charLightsaber})">Lightsaber</option>
+                                        <option value="skill(@{rankMechanics}|@{Intellect})">Mechanics</option>
                                     </select>
                                 </td>
                             </tr>
@@ -5892,7 +5894,6 @@
 
 <!-- Start GM sheet -->
 <div class="sheet-tab-content sheet-tab-gm-dice">
-    <!-- GM Dice Pool  -->
     <div class="sheet-row sheet-section-1">
         <!-- Start GM Dice Pool --><div class="sheet-small-12 sheet-column">
             <br />
@@ -5968,122 +5969,261 @@
         </div><!-- End GM Destiny Pool -->
 
         <input type="radio" name="attr_gm-sheet" class="sheet-tab sheet-tab-gm-weapons" value="1" title="Group Mechanics" checked="checked" />
-        <!--<input type="radio" name="attr_gm-sheet" class="sheet-tab sheet-tab-gm-adversaries" value="2" title="Adversaries" />-->
-        <input type="radio" name="attr_gm-sheet-unlock" value="unlock" style="display:none" />
+        <input type="radio" name="attr_gm-sheet" class="sheet-tab sheet-tab-gm-adversaries" value="2" title="Campaign Details" />
 
-        <div class="sheet-row">
-            <!--GM Group Mechanics List-->
-            <div class="sheet-small-12 sheet-column">
-                <table>
-                    <tbody>
-                        <tr>
-                            <td colspan="2">
-                                <input type="text" name="attr_mechanicrollerinfo" value="Highlight the token of all the Players you want to roll for." disabled />
-                                <button type='roll' name='roll_Obligation' value='!obligation-check'>Roll Obligation</button><br><br>
-                                <button type='roll' name='roll_Duty' value='!duty-check'>Roll Duty</button><br><br>
-                                <button type='roll' name='roll_Morality' value='!morality-check'>Roll Morality</button><br><br>
-                            </td>
-                        </tr>
-                    <tbody>
-                </table>
-            </div><!-- Mechanic Roll Buttons -->
+        <!--Start GM Command Center--><div class="sheet-tab-content sheet-tab-gm-weapons">
             <div class="sheet-row">
+                <!--GM Group Mechanics List-->
                 <div class="sheet-small-12 sheet-column">
-                    <h3 class="sheet-section-header">Player/Group Obligations</h3>
-                    <fieldset class="repeating_group-obligation">
-                        <table cellspacing="0" cellpadding="0" border="0">
-                            <tbody>
-                                <tr>
-                                    <td><label>Player:</label></td>
-                                    <td><input type="text" name="attr_playerobligationname1" /></td>
-                                    <td><label>Type:</label></td>
-                                    <td><input type="text" name="attr_playerobligationtype1" /></td>
-                                    <td><label>Magnitude:</label></td>
-                                    <td><input type="number" name="attr_playerobligationmag1" min="0" value="0" /></td>
-                                </tr>
-                                <tr>
-                                    <td><label>Details:</label></td>
-                                    <td colspan="6" class="sheet-div-right"><textarea rows="3" name="attr_playerobligationdetails1"></textarea></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </fieldset>
-                </div>
-            </div><!-- Group Obligations -->
-            <div class="sheet-row">
-                <div class="sheet-small-12 sheet-column">
-                    <h3 class="sheet-section-header">Player Duties</h3>
                     <table>
                         <tbody>
-                            <tr class="sheet-bg-grey">
-                                <td><label></label></td>
-                                <td><input type="hidden" name="attr_playerdutyhidden" disabled /></td>
-                                <td><label style="text-align:right">Group's Contribution Rank:</label></td>
-                                <td><input type="number" name="attr_groupcontributionRank" min="0" value="0" /></td>
-                                <td><label></label></td>
-                                <td><input type="hidden" name="attr_playerdutyhidden" disabled /></td>
-                                <td><label></label></td>
-                                <td><input type="hidden" name="attr_playerdutyhidden" disabled /></td>
-                                <td><label></label></td>
-                                <td><input type="hidden" name="attr_playerdutyhidden" disabled /></td>
-                                <td><label></label></td>
+                            <tr>
+                                <td colspan="2">
+                                    <input type="text" name="attr_mechanicrollerinfo" value="Highlight the token of all the Players you want to roll for." disabled />
+                                    <button type='roll' name='roll_Obligation' value='!obligation-check'>Roll Obligation</button><br><br>
+                                    <button type='roll' name='roll_Duty' value='!duty-check'>Roll Duty</button><br><br>
+                                    <button type='roll' name='roll_Morality' value='!morality-check'>Roll Morality</button><br><br>
+                                </td>
                             </tr>
-                        </tbody>
+                        <tbody>
                     </table>
-                    <fieldset class="repeating_group-duty">
-                        <table cellspacing="0" cellpadding="0" border="0">
+                </div><!-- Mechanic Roll Buttons -->
+                <div class="sheet-row">
+                    <div class="sheet-small-12 sheet-column">
+                        <h3 class="sheet-section-header">Player/Group Obligations</h3>
+                        <fieldset class="repeating_group-obligation">
+                            <table cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td><label>Player:</label></td>
+                                        <td><input type="text" name="attr_playerobligationname1" /></td>
+                                        <td><label>Type:</label></td>
+                                        <td><input type="text" name="attr_playerobligationtype1" /></td>
+                                        <td><label>Magnitude:</label></td>
+                                        <td><input type="number" name="attr_playerobligationmag1" min="0" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Details:</label></td>
+                                        <td colspan="6" class="sheet-div-right"><textarea rows="3" name="attr_playerobligationdetails1"></textarea></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </fieldset>
+                    </div>
+                </div><!-- Group Obligations -->
+                <div class="sheet-row">
+                    <div class="sheet-small-12 sheet-column">
+                        <h3 class="sheet-section-header">Player Duties</h3>
+                        <table>
                             <tbody>
-                                <tr>
-                                    <td><label>Player:</label></td>
-                                    <td><input type="text" name="attr_playerdutyname1" /></td>
-                                    <td><label>Type:</label></td>
-                                    <td><input type="text" name="attr_playerdutytype1" /></td>
-                                    <td><label>Magnitude:</label></td>
-                                    <td><input type="number" name="attr_playerdutymag1" min="0" value="0" /></td>
-                                </tr>
-                                <tr>
-                                    <td><label>Details:</label></td>
-                                    <td colspan="6" class="sheet-div-right"><textarea rows="3" name="attr_playerdutydetails1"></textarea></td>
+                                <tr class="sheet-bg-grey">
+                                    <td><label></label></td>
+                                    <td><input type="hidden" name="attr_playerdutyhidden" disabled /></td>
+                                    <td><label style="text-align:right">Group's Contribution Rank:</label></td>
+                                    <td><input type="number" name="attr_groupcontributionRank" min="0" value="0" /></td>
+                                    <td><label></label></td>
+                                    <td><input type="hidden" name="attr_playerdutyhidden" disabled /></td>
+                                    <td><label></label></td>
+                                    <td><input type="hidden" name="attr_playerdutyhidden" disabled /></td>
+                                    <td><label></label></td>
+                                    <td><input type="hidden" name="attr_playerdutyhidden" disabled /></td>
+                                    <td><label></label></td>
                                 </tr>
                             </tbody>
                         </table>
-                    </fieldset>
-                </div>
-            </div><!-- Group Duties -->
+                        <fieldset class="repeating_group-duty">
+                            <table cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td><label>Player:</label></td>
+                                        <td><input type="text" name="attr_playerdutyname1" /></td>
+                                        <td><label>Type:</label></td>
+                                        <td><input type="text" name="attr_playerdutytype1" /></td>
+                                        <td><label>Magnitude:</label></td>
+                                        <td><input type="number" name="attr_playerdutymag1" min="0" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Details:</label></td>
+                                        <td colspan="6" class="sheet-div-right"><textarea rows="3" name="attr_playerdutydetails1"></textarea></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </fieldset>
+                    </div>
+                </div><!-- Group Duties -->
+                <div class="sheet-row">
+                    <div class="sheet-small-12 sheet-column">
+                        <h3 class="sheet-section-header">Player Morality</h3>
+                        <fieldset class="repeating_group-morality">
+                            <table cellspacing="0" cellpadding="0" border="0">
+                                <tbody>
+                                    <tr>
+                                        <td><label>Player:</label></td>
+                                        <td><input type="text" name="attr_playermoralityname1" /></td>
+                                        <td><label>Morality:</label></td>
+                                        <td><input type="number" name="attr_playermorality1" min="0" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Emotional Strength:</label></td>
+                                        <td><input type="text" name="attr_playeremotionalstrength1" /></td>
+                                        <td><label>Emotional Weakness:</label></td>
+                                        <td><input type="text" name="attr_playeremotionalweakness1" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Harmony:</label></td>
+                                        <td><input type="number" name="attr_playerharmony1" min="0" value="0" /></td>
+                                        <td><label>Conflict:</label></td>
+                                        <td><input type="number" name="attr_playerconflict1" min="0" value="0" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label>Details:</label></td>
+                                        <td colspan="8" class="sheet-div-right"><textarea rows="3" name="attr_playermoralitydetails1"></textarea></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </fieldset>
+                    </div>
+                </div><!-- Group Morality -->
+            </div>
+        </div><!--End GM Command Center-->
+        <!--Start GM Mission Setup--><div class="sheet-tab-content sheet-tab-gm-adversaries">
             <div class="sheet-row">
-                <div class="sheet-small-12 sheet-column">
-                    <h3 class="sheet-section-header">Player Morality</h3>
-                    <fieldset class="repeating_group-morality">
-                        <table cellspacing="0" cellpadding="0" border="0">
-                            <tbody>
-                                <tr>
-                                    <td><label>Player:</label></td>
-                                    <td><input type="text" name="attr_playermoralityname1" /></td>
-                                    <td><label>Morality:</label></td>
-                                    <td><input type="number" name="attr_playermorality1" min="0" value="0" /></td>
-                                </tr>
-                                <tr>
-                                    <td><label>Emotional Strength:</label></td>
-                                    <td><input type="text" name="attr_playeremotionalstrength1" /></td>
-                                    <td><label>Emotional Weakness:</label></td>
-                                    <td><input type="text" name="attr_playeremotionalweakness1" /></td>
-                                </tr>
-                                <tr>
-                                    <td><label>Harmony:</label></td>
-                                    <td><input type="number" name="attr_playerharmony1" min="0" value="0" /></td>
-                                    <td><label>Conflict:</label></td>
-                                    <td><input type="number" name="attr_playerconflict1" min="0" value="0" /></td>
-                                </tr>
-                                <tr>
-                                    <td><label>Details:</label></td>
-                                    <td colspan="8" class="sheet-div-right"><textarea rows="3" name="attr_playermoralitydetails1"></textarea></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </fieldset>
-                </div>
-            </div><!-- Group Morality -->
-        </div>
+                <!-- Start Assignments and Tasks --><div class="sheet-row">
+                    <div class="sheet-small-12 sheet-column">
+                        <h3 class="sheet-section-header">Assignments and Tasks</h3>
+                        <fieldset class="repeating_grouptasks">
+                            <div class="sheet-row">
+                                <div class="sheet-small-12 sheet-column">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                            <tr class="sheet-bg-blue">>
+                                                <td><label>Mission/Task Number:</label></td>
+                                                <td><input type="number" name="attr_groupmission-awardxp-base" min="1" value="1" /></td>
+                                                <td><label>Expected sessions to complete:</label></td>
+                                                <td><input type="number" name="attr_groupmission-awardxp-base" min="1" value="1" /></td>
+                                                <td><label>Actual sessions to complete:</label></td>
+                                                <td><input type="number" name="attr_groupmission-awardxp-base" min="1" value="1" /></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="sheet-clear"></div>
+                                </div>
+                            </div>
+                            <div class="sheet-row">
+                                <div class="sheet-small-12 sheet-column">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">General Info</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><label>Mission Type:</label></td>
+                                                <td><input type="text" name="attr_groupmission-type" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label>Setup:</label></td>
+                                                <td class="sheet-div-right"><textarea rows="2" name="attr_groupmission-setup"></textarea></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label>Hook:</label></td>
+                                                <td class="sheet-div-right"><textarea rows="2" name="attr_groupmission-hook"></textarea></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="sheet-clear"></div>
+                                </div>
+                            </div>
+                            <div class="sheet-row">
+                                <div class="sheet-small-12 sheet-column">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">Location</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><label>Planet:</label></td>
+                                                <td><input type="text" name="attr_groupmission-planet" /></td>
+                                                <td><label>Continent:</label></td>
+                                                <td><input type="text" name="attr_groupmission-continent" /></td>
+                                                <td><label>City:</label></td>
+                                                <td><input type="text" name="attr_groupmission-city" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label>Terrain:</label></td>
+                                                <td><input type="text" name="attr_groupmission-terrain" /></td>
+                                                <td><label>Nearest Hyperlane:</label></td>
+                                                <td><input type="text" name="attr_groupmission-hyperlane" /></td>
+                                                <td><label>Galaxy Map Grid Coordinates:</label></td>
+                                                <td><input type="text" name="attr_groupmission-hyperlane" /></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="sheet-clear"></div>
+                                </div>
+                            </div>
+                            <div class="sheet-row">
+                                <div class="sheet-small-12 sheet-column">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">Reward</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><label>Credits:</label></td>
+                                                <td><input type="text" name="attr_groupmission-awardcredits" value="0" /></td>
+                                                <td><label>Items:</label></td>
+                                                <td><input type="text" name="attr_groupmission-awarditems" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td><label>Base XP:</label></td>
+                                                <td><input type="number" name="attr_groupmission-awardxp-base" min="0" value="0" /></td>
+                                                <td><label>Bonus XP (Motivation):</label></td>
+                                                <td><input type="number" name="attr_groupmission-awardxp-motiv" min="0" value="0" /></td>
+                                                <td><label>Bonus XP (Role Playing):</label></td>
+                                                <td><input type="number" name="attr_groupmission-awardxp-roleplay" min="0" value="0" /></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="sheet-clear"></div>
+                                </div>
+                            </div>
+                            <div class="sheet-row">
+                                <div class="sheet-small-12 sheet-column">
+                                    <table cellspacing="0" cellpadding="0" border="0">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">Specific Details</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><label>Mission Objectives:</label></td>
+                                                <td colspan="6" class="sheet-div-right"><textarea rows="3" name="attr_groupmission-objectives"></textarea></td><!--Repeating?-->
+                                            </tr>
+                                            <tr>
+                                                <td><label>Key Items:</label></td>
+                                                <td colspan="6" class="sheet-div-right"><textarea rows="3" name="attr_groupmission-keyitems"></textarea></td><!--Repeating?-->
+                                            </tr>
+                                            <tr>
+                                                <td><label>Mission Contacts:</label></td>
+                                                <td colspan="6" class="sheet-div-right"><textarea rows="3" name="attr_groupmission-contacts"></textarea></td><!--Repeating?-->
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="sheet-clear"></div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div><!-- End Assignments and Tasks -->
+            </div>
+        </div><!--End GM Mission Setup-->
     </div>
 </div>
 <!-- End GM sheet -->
