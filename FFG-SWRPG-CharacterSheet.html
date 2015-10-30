@@ -6096,11 +6096,22 @@
                                 <div class="sheet-small-12 sheet-column">
                                     <table cellspacing="0" cellpadding="0" border="0">
                                         <tbody>
-                                            <tr class="sheet-bg-blue">>
+                                            <tr class="sheet-bg-blue">
                                                 <td><label>Mission/Task Number:</label></td>
                                                 <td><input type="number" name="attr_groupmission-awardxp-base" min="1" value="1" /></td>
                                                 <td><label>Expected sessions to complete:</label></td>
                                                 <td><input type="number" name="attr_groupmission-awardxp-base" min="1" value="1" /></td>
+                                            </tr>
+                                            <tr class="sheet-bg-blue">
+                                                <td><label>Completed?:</label></td>
+                                                <td>
+                                                    <select name='attr_groupmission-completed'>
+                                                        <option value="No-Notstarted">No - Not Started</option>
+                                                        <option value="No-InProgress">No - In Progress</option>
+                                                        <option value="Yes-Completed">Yes - Completed</option>
+                                                        <option value="Yes-Failed">Yes - Failed</option>
+                                                    </select>
+                                                </td>
                                                 <td><label>Actual sessions to complete:</label></td>
                                                 <td><input type="number" name="attr_groupmission-awardxp-base" min="1" value="1" /></td>
                                             </tr>
@@ -6134,13 +6145,13 @@
                                     </table>
                                     <div class="sheet-clear"></div>
                                 </div>
-                            </div>
+                            </div><!--General Info-->
                             <div class="sheet-row">
                                 <div class="sheet-small-12 sheet-column">
                                     <table cellspacing="0" cellpadding="0" border="0">
                                         <thead>
                                             <tr>
-                                                <th colspan="2">Location</th>
+                                                <th colspan="6">Location</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -6164,13 +6175,13 @@
                                     </table>
                                     <div class="sheet-clear"></div>
                                 </div>
-                            </div>
+                            </div><!--Location-->
                             <div class="sheet-row">
                                 <div class="sheet-small-12 sheet-column">
                                     <table cellspacing="0" cellpadding="0" border="0">
                                         <thead>
                                             <tr>
-                                                <th colspan="2">Reward</th>
+                                                <th colspan="4">Reward(s)</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -6181,8 +6192,12 @@
                                                 <td><input type="text" name="attr_groupmission-awarditems" /></td>
                                             </tr>
                                             <tr>
+                                                <td></td>
                                                 <td><label>Base XP:</label></td>
                                                 <td><input type="number" name="attr_groupmission-awardxp-base" min="0" value="0" /></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
                                                 <td><label>Bonus XP (Motivation):</label></td>
                                                 <td><input type="number" name="attr_groupmission-awardxp-motiv" min="0" value="0" /></td>
                                                 <td><label>Bonus XP (Role Playing):</label></td>
@@ -6192,7 +6207,7 @@
                                     </table>
                                     <div class="sheet-clear"></div>
                                 </div>
-                            </div>
+                            </div><!--Rewards-->
                             <div class="sheet-row">
                                 <div class="sheet-small-12 sheet-column">
                                     <table cellspacing="0" cellpadding="0" border="0">
@@ -6218,8 +6233,95 @@
                                     </table>
                                     <div class="sheet-clear"></div>
                                 </div>
-                            </div>
-                        </fieldset>
+                            </div><!--Specific Details-->
+                            <div class="sheet-row">
+                                <div class="sheet-small-12 sheet-column">
+                                    <!-- Start NPC List --><div class="sheet-attachments-wrapper">
+                                        <input type="checkbox" name="attr_groupmission-NPCs" class="sheet-view-attachments" />
+                                        <label class="sheet-view-attachments">View NPC List</label>
+                                        <div class="sheet-clear"></div>
+                                        <table class="sheet-attachments" cellspacing="0" cellpadding="0" border="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>NPC Name</th>
+                                                    <th>Type</th>
+                                                    <th>Number</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><input name='attr_groupmission-NPCname1' type="text" /></td>
+                                                    <td>
+                                                        <select name='attr_groupmission-NPCtype1'>
+                                                            <option value="Minion">Minion</option>
+                                                            <option value="Rival">Rival</option>
+                                                            <option vaule="Nemesis">Nemesis</option>
+                                                        </select>
+                                                    </td>
+                                                    <td><input name='attr_groupmission-NPCnumber1' type="number" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input name='attr_groupmission-NPCname2' type="text" /></td>
+                                                    <td>
+                                                        <select name='attr_groupmission-NPCtype2'>
+                                                            <option value="Minion">Minion</option>
+                                                            <option value="Rival">Rival</option>
+                                                            <option vaule="Nemesis">Nemesis</option>
+                                                        </select>
+                                                    </td>
+                                                    <td><input name='attr_groupmission-NPCnumber2' type="number" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input name='attr_groupmission-NPCname3' type="text" /></td>
+                                                    <td>
+                                                        <select name='attr_groupmission-NPCtype3'>
+                                                            <option value="Minion">Minion</option>
+                                                            <option value="Rival">Rival</option>
+                                                            <option vaule="Nemesis">Nemesis</option>
+                                                        </select>
+                                                    </td>
+                                                    <td><input name='attr_groupmission-NPCnumber3' type="number" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input name='attr_groupmission-NPCname4' type="text" /></td>
+                                                    <td>
+                                                        <select name='attr_groupmission-NPCtype4'>
+                                                            <option value="Minion">Minion</option>
+                                                            <option value="Rival">Rival</option>
+                                                            <option vaule="Nemesis">Nemesis</option>
+                                                        </select>
+                                                    </td>
+                                                    <td><input name='attr_groupmission-NPCnumber4' type="number" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input name='attr_groupmission-NPCname5' type="text" /></td>
+                                                    <td>
+                                                        <select name='attr_groupmission-NPCtype5'>
+                                                            <option value="Minion">Minion</option>
+                                                            <option value="Rival">Rival</option>
+                                                            <option vaule="Nemesis">Nemesis</option>
+                                                        </select>
+                                                    </td>
+                                                    <td><input name='attr_groupmission-NPCnumber5' type="number" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><input name='attr_groupmission-NPCname6' type="text" /></td>
+                                                    <td>
+                                                        <select name='attr_groupmission-NPCtype6'>
+                                                            <option value="Minion">Minion</option>
+                                                            <option value="Rival">Rival</option>
+                                                            <option vaule="Nemesis">Nemesis</option>
+                                                        </select>
+                                                    </td>
+                                                    <td><input name='attr_groupmission-NPCnumber6' type="number" /></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="sheet-clear"></div>
+                                    </div><!-- End NPC List -->
+                                </div>
+                            </div><!--NPC List Show/Hide-->
+                        </fieldset><!--Single Task (Repeating)-->
                     </div>
                 </div><!-- End Assignments and Tasks -->
             </div>
