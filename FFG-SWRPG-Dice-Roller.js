@@ -166,6 +166,10 @@ var Moralityattribute = "morality";
 state.aChar = state.aChars || {};
 var aChars;
 var type;
+//These are constants and do not change.
+var GM_DICE_POOL_ID = '-GM Command Center-ID'
+var GM_CHARACTER_NAME = "-GM Command Center-";
+
 
 eote.init = function () {
     eote.setCharacterDefaults();
@@ -297,7 +301,7 @@ eote.defaults = {
 
 eote.createGMDicePool = function () {
 
-    var charObj_DicePool = findObjs({ _type: "character", name: "-GM Command Center-" })[0];
+    var charObj_DicePool = findObjs({ _type: "character", name: GM_CHARACTER_NAME })[0];
 
     var attrObj_DicePool = [
         {
@@ -330,13 +334,13 @@ eote.createGMDicePool = function () {
     if (!charObj_DicePool) {
 
         charObj_DicePool = createObj("character", {
-            name: "-GM Command Center-",
-            bio: "-GM Command Center-"
+            name: GM_CHARACTER_NAME,
+            bio: GM_CHARACTER_NAME
         });
 
     }
 
-    eote.defaults['-GM Command Center-ID'] = charObj_DicePool.id;
+    eote.defaults[GM_DICE_POOL_ID] = charObj_DicePool.id;
 
     eote.updateAddAttribute(charObj_DicePool, attrObj_DicePool);
 
@@ -400,8 +404,7 @@ eote.updateListeners = function (attributes) {
     //Update GM
     var GMObj = findObjs({
         _type: "character",
-       // _id: eote.defaults['-DicePoolID']
-       id: eote.defaults['-GM Command Center-ID']
+       id: eote.defaults[GM_DICE_POOL_ID]
     });
     eote.updateAddAttribute(GMObj, attributes);
 }
@@ -888,7 +891,7 @@ eote.process.rollPlayer = function (cmd, diceObj) {
 
 eote.process.destiny = function (cmd, diceObj) {
 
-    var charObj_DicePool = findObjs({ _type: "character", name: "-GM Command Center-" })[0];
+    var charObj_DicePool = findObjs({ _type: "character", name: GM_CHARACTER_NAME })[0];
 
     var doRoll = false;
 
