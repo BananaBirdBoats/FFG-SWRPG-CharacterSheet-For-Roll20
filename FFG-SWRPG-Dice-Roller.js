@@ -48,7 +48,7 @@ if (!Date.now) {
 
 /*
     Current Version: 4.0
-    Last updated: 10.19.2015
+    Last updated: 10.30.2015
     Character Sheet and Script Maintained by: GM Knowledge Rhino
     Current and Developement Verions: https://github.com/KnowledgeRhino/FFG-SWRPG-CharacterSheet-For-Roll20.git
     Older Verions: https://github.com/dayst/StarWarsEdgeOfTheEmpire_Dice
@@ -59,11 +59,15 @@ if (!Date.now) {
       Dice graphics hosted by Alicia G. at galacticcampaigns.com
       Dice graphics borrowed from the awesome google+ hangouts EotE Dice App
       Character Sheet and Advanced Dice Roller: Steve Day
+      GM Sheet Campaign Details design idea: www.reddit.com/user/JohnSquiggleton
+      GM Sheet Campaign Details Implementation: GM Knowledge Rhino
+      Sheet Autocreator: www.reddit.com/user/lowdownfool
+      Mechanic Roller: Adam B.
       Debugger: Arron
       Initiative Roller: Andrew H.
       Opposed Roller: Tom F.
       Group Tab: GM Knowledge Rhino
-      Companion Tab: GM Knowledge Rhino
+      Companion Tab  (Currently under-going testing): GM Knowledge Rhino
       GM Command Center: GM Knowledge Rhino
       Skill Description by: Gribble - https://dl.dropboxusercontent.com/u/9077657/SW-EotE-Reference-Sheets.pdf
       Critical Descriptions by: Gribble - https://dl.dropboxusercontent.com/u/9077657/SW-EotE-Reference-Sheets.pdf
