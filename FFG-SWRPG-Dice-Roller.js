@@ -62,13 +62,9 @@ if (!Date.now) {
       Debugger: Arron
       Initiative Roller: Andrew H.
       Opposed Roller: Tom F.
-      Sheet Autocreator: www.reddit.com/user/lowdownfool
-      Mechanic Roller: Adam B.
-      GM Sheet Campaign Details design idea: www.reddit.com/user/JohnSquiggleton
-      GM Sheet Campaign Details Implementation: GM Knowledge Rhino
       Group Tab: GM Knowledge Rhino
+      Companion Tab: GM Knowledge Rhino
       GM Command Center: GM Knowledge Rhino
-      Companion Tab (Currently under-going testing): GM Knowledge Rhino
       Skill Description by: Gribble - https://dl.dropboxusercontent.com/u/9077657/SW-EotE-Reference-Sheets.pdf
       Critical Descriptions by: Gribble - https://dl.dropboxusercontent.com/u/9077657/SW-EotE-Reference-Sheets.pdf
   
@@ -300,7 +296,7 @@ eote.defaults = {
 
 eote.createGMDicePool = function () {
 
-    var charObj_DicePool = findObjs({ _type: "character", name: "-DicePool" })[0];
+    var charObj_DicePool = findObjs({ _type: "character", name: "-GM Command Center-" })[0];
 
     var attrObj_DicePool = [
         {
@@ -317,17 +313,17 @@ eote.createGMDicePool = function () {
         }
     ];
 
-    //create character -DicePool
+    //create character -GM Command Center-
     if (!charObj_DicePool) {
 
         charObj_DicePool = createObj("character", {
-            name: "-DicePool",
-            bio: "GM Dice Pool"
+            name: "-GM Command Center-",
+            bio: "-GM Command Center-"
         });
 
     }
 
-    eote.defaults['-DicePoolID'] = charObj_DicePool.id;
+    eote.defaults['-GM Command Center-ID'] = charObj_DicePool.id;
 
     eote.updateAddAttribute(charObj_DicePool, attrObj_DicePool);
 
