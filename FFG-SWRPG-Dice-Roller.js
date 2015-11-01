@@ -188,7 +188,7 @@ eote.defaults = {
         diceGraphicResultLog: "",
         diceTestEnabled: false,
         diceLogRolledOnOneLine: true,
-        scriptDebug: false
+        debugScript: false
     },
     '-DicePoolID': '',
     character: {
@@ -634,7 +634,7 @@ eote.process.setup = function (cmd, playerName, playerID) {
 
     if (gmdiceMatch) {
         cmd = eote.process.gmdice(cmd); // update the cmd string to contain the gmdice
-        eote.process.logger("eote.process.setup.gmDice", "New command: " + cmd);
+		eote.process.logger("eote.process.setup.gmDice", "New command: " + cmd);
     }
 
     var encumMatch = cmd.match(eote.defaults.regex.encum);
@@ -876,8 +876,8 @@ eote.process.rollPlayer = function (cmd, diceObj) {
     var skillMatch = cmd[1].match(match.skill);
 
     if (skillMatch) {
-
-        var attrArray = skillMatch[1].split(',')
+        
+		var attrArray = skillMatch[1].split(',')
         var attr_1 = getAttrByName(diceObj.vars.characterID, attrArray[0]);
         var attr_2 = getAttrByName(diceObj.vars.characterID, attrArray[1]);
         var cmdSkill = ['skill(' + attr_1 + '|' + attr_2 + ')']; //['skill(0|2)']
@@ -1938,12 +1938,11 @@ eote.process.gmdice = function (cmd) {
 
     /* gmdice
      * default: 
-     * Description: Update CMD string to include -DicePool dice
+     * Description: Update CMD string to include the dice on the GM character.
      * Command: (gmdice)
      * ---------------------------------------------------------------- */
 
-    //var charObj = findObjs({ _type: "character", name: "-DicePool" });
-    var charID = eote.defaults['-DicePoolID'];//charObj[0].id;
+    var charID = eote.defaults[GM_DICE_POOL_ID];//charObj[0].id;
 
     var g = getAttrByName(charID, 'ggm');
     var y = getAttrByName(charID, 'ygm');
